@@ -1,5 +1,3 @@
-console.log("Client side")
-
 const documentForm = document.querySelector('form')
 const search = document.querySelector('input')
 const textTemprature = document.querySelector('#message-1')
@@ -16,7 +14,7 @@ documentForm.addEventListener('submit', (e) => {
     textDescription.textContent = "Loading.."
     textTemprature.textContent = ""
     textHumidity.textContent = ""
-    
+
     fetch(`http://localhost:3000/weather?address=${location}`).then((response) => {
         response.json().then((data) => {
             if (data.error) {
